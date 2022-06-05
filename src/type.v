@@ -721,7 +721,7 @@ fn type_max(typ1 &Type, typ2 &Type) &Type {
 }
 
 fn (mut node Node) add_type() {
-	if node.kind == .nothing || node.typ != 0 {
+	if node.kind == .nothing || unsafe { node.typ != 0 } {
 		return
 	}
 	if !isnil(node.cond) {
@@ -744,7 +744,7 @@ fn (mut node Node) add_type() {
 
 	mut typ := &Type{}
 
-	match (node.kind) {
+	match node.kind {
 		.assign, .calcassign {
 			node.typ = node.left.typ.clone()
 		}

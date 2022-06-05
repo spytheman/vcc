@@ -154,7 +154,9 @@ pub fn tokenize(p string) []Tok {
 				tokens << new_token(.reserved, res, line, lpos)
 				pos += res.len
 				lpos += res.len
-				unsafe { goto cont }
+				unsafe {
+					goto cont
+				}
 			}
 		}
 
@@ -332,7 +334,7 @@ pub fn tokenize(p string) []Tok {
 			continue
 		}
 		parse_err('$line:$lpos: Cannot tokenize')
-	cont:
+		cont:
 	}
 
 	tokens << new_token(.eof, '', line, lpos)

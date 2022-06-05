@@ -1,5 +1,5 @@
 vcc:
-	v -g -o vcc ./src
+	v -g -o vcc vcc.v
 
 test: vcc
 	v run test.vsh

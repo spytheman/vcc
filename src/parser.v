@@ -525,7 +525,7 @@ fn (mut p Parser) function(name string, typ &Type) &Function {
 	p.block_without_curbl(mut content)
 	p.curbl.delete(p.curbl.len - 1)
 	func.content = content
-	p.curfn = &src.Function(0)
+	p.curfn = &Function(0)
 	return func
 }
 

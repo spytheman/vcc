@@ -17,7 +17,7 @@ fn main() {
 		}
 		program = args[2]
 	} else {
-		cont := os.read_file(args[1]) ?
+		cont := os.read_file(args[1])?
 		program = cont
 	}
 
